@@ -1,0 +1,85 @@
+header{
+    width: 100%;
+}
+
+.header-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 24px;
+
+    .header-icons{
+        display: flex;
+        gap: 16px;
+    }
+
+    i{
+        color: $white-normal;
+        transition: color .3s;
+    }
+
+    .header-icons a:hover{
+        i{
+            color:$red-light;
+            animation: animation-icons 1s infinite alternate;
+        }
+    }
+
+    @keyframes animation-icons{
+        from{
+            transform: translateY(0) scale(1);
+        }
+        to{
+            transform: translateY(-8px) scale(1.1);
+        }
+    }
+
+    input{
+        background-color: transparent;
+        color: $white-normal;
+        border: 1px solid $white-normal;
+        padding: 8px 24px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: .5s;
+    }
+
+    .header-button:hover{
+        input{
+            background-color: $red-light;
+            border: 1px solid $red-light;
+        }
+    }
+
+    .header-logo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 16px;
+    }
+}
+
+@media screen and (max-width:768px){
+    .header-content{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 42px;
+        padding-top: 16px;
+    }
+    .header-logo{
+        width: 200px;
+    }
+    .header-button{
+        display: none;
+    }
+    .header-icons a{
+        font-size: 24px;
+    }
+}
+
+.bg-home{
+    background-image: url('/assets/bg.svg');
+    background-size: cover;
+    background-position: center center;
+}
