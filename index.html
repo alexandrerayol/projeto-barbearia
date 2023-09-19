@@ -9,16 +9,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHhttp://127.0.0.1:5500/index.html#g4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <title>Dev Barber - A sua barbearia!</title>
 </head>
 <body>
 
     <!-- HEADER -->
-
     <div class="bg-home">
         <header>
-            <nav class="header-content container">
+            <nav class="header-content container" data-aos="fade-down" data-aos-delay="250">
                 <div class="header-icons">
                    <a href="#">
                         <i class="fa-brands fa-instagram fa-2x"></i>
@@ -46,23 +46,22 @@
                 </div>
             </nav>
 
-            <main class="hero container">
+            <main class="hero container" data-aos="fade-up" data-aos-delay="250">
                 <h1>ESTILO É UM REFLEXO DA SUA ATITUDE E SUA PERSONALIDADE.</h1>
                 <p>Horário de funcionamento: 09:00 ás 19:00</p>
                 <input type="button" value="Agendar horário">
             </main>
         </header>
-
-
     </div>
 
-    <section class="about">
+    <!-- ABOUT -->
+    <section class="about" >
         <div class="about-content container">
-            <div>
+            <div data-aos="zoom-in" data-aos-delay="250">
                 <img src="assets/images.svg" alt="Imagem sobre a barbearia">
             </div>
 
-            <div class="about-description">
+            <div class="about-description" data-aos="zoom-out" data-aos-delay="250">
                 <h2>SOBRE</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, laudantium. Quo voluptates iusto incidunt. Esse, exercitationem ipsam nostrum adipisci iure animi dolorum fuga nisi eaque, id quisquam cum, in repellat!</p>
                 <p>Horário de funcionamento: <strong>09:00 ás 19:00</strong></p>
@@ -70,22 +69,21 @@
         </div>
     </section>
 
+    <!--SERVICES-->
     <section class="services">
-        <div class="services-content container">
+        <div class="services-content container" data-aos="fade-up" data-aos-delay="250">
             <h2>SERVIÇOS</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque a laudantium illo quibusdam officia velit? Eaque quae pariatur quis, dolore dicta qui dolorem quo minus, esse quos necessitatibus. Et, ducimus.</p>
 
-            <div class="hair-cut-container container">
+            <div class="hair-cut-container">
 
-                <div class="hair-cut">
+                <div class="hair-cut" data-aos="fade-up" data-aos-delay="250">
                     <img src="assets/corte1.png" alt="corte de cabelo">
                     <div class="hair-cut-details">
                         <div>
-                            <p>
-                                <strong>
-                                    Corte cabelo
-                                </strong>
-                            </p>
+                            <strong>
+                                Corte cabelo
+                            </strong>
                         </div>
 
                         <div>
@@ -95,49 +93,41 @@
                     </div>
                 </div>
 
-                <div class="hair-cut">
-                   <div class="hair-cut-bg"><img src="assets/corte2.png" alt="corte de barba"></div>
+                <div class="hair-cut" data-aos="fade-up" data-aos-delay="350">
+                   <img src="assets/corte2.png" alt="corte de barba">
 
                     <div class="hair-cut-details">
                         <div>
-                            <p>
-                                <strong>
-                                    Barba completa
-                                </strong>
-                            </p>
+                            <strong>
+                                Barba completa
+                            </strong>
                         </div>
-                        
                         <div>
                             <input type="button" value="R$ 35,00">
                         </div>
-
                     </div>
                 </div>
 
-                <div class="hair-cut">
+                <div class="hair-cut" data-aos="fade-up" data-aos-delay="450">
                     <img src="assets/corte3.png" alt="cabelo e barba">
                     
                     <div class="hair-cut-details">
 
                             <div>
-                                <p>
-                                    <strong>
-                                        Cabelo e barba
-                                    </strong>
-                                </p>
+                                <strong>
+                                    Cabelo e barba
+                                </strong>
                             </div>
-
                         <div>
                             <input type="button" value="R$ 70,00">
                         </div>
-
                     </div>
-
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- MAP -->
     <section class="map">
         <div>
             <h2>Venha conhecer</h2>
@@ -145,6 +135,7 @@
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.5478481418186!2d-48.49162322426756!3d-1.4459563358230523!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x92a48e97ef8b1359%3A0x2c38f118dd29a3!2sBoulevard%20Shopping!5e0!3m2!1spt-BR!2sbr!4v1695079551313!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </section>
 
+    <!-- FOOTER-->
     <footer>
         <div class="footer-content">
             <div class="footer-icons">
@@ -172,5 +163,13 @@
             </div>
         </div>
     </footer>
+
+    <a href="https://api.whatsapp.com/send/?phone=5555999999999&text=Ol%C3%A1%21+Quero+agendar+um+hor%C3%A1rio%21&type=phone_number&app_absent=0" target="_blank" class="whatsapp-btn" data-aos="fade-up" data-aos-delay="500">
+        <img src="assets/whatssapp.svg" alt="botão do whatssapp">
+        <span class="text-btn"> Agendar horário</span>
+    </a>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

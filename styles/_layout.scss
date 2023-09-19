@@ -7,7 +7,7 @@
 
 .hero{
     padding-top: 35vh;
-    padding-bottom: 10vh;
+    padding-bottom: 12vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -62,6 +62,7 @@
 
 .about{
     background-color: $primary-dark;
+    
 }
 .about-content{
     color: $white-normal;
@@ -73,7 +74,7 @@
     padding-bottom: 24px;
 
     div{
-        flex: 1;
+        flex: 1; /* faz com que as duas divs ocupem espaços iguais*/
 
         h2{
             margin-bottom: 24px;
@@ -112,6 +113,10 @@
 
 .services-content{
     padding: 42px 24px 64px 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     
     h2{
         font-size: 36px;
@@ -120,9 +125,11 @@
         font-weight: bold;
     }
     p{
+        text-align: left;
         line-height: 150%;
         font-size: 16px;
         margin-bottom: 32px;
+        max-width: 720px;
     }
 }
 
@@ -131,27 +138,43 @@
     justify-content: center;
     align-items: center;
     gap: 24px;
-
+    
 
     .hair-cut{
-        background-color: $white-light;
-        border-radius: 0px 0px  16px 16px;
+        border-radius: 16px;
         box-shadow: 1px 1px 20px 0px rgba(0, 0, 0, 0.5);
-        transition: .25s ease-in-out;
         cursor: pointer;
+        overflow: hidden;
+        
+        img{
+            max-width: 320px;
+            transition: transform .25s ease-in-out;
+        }
 
-        .hair-cut-details{ 
-            padding: 12px;
+        .hair-cut-details{
             display: flex;
             align-items: center;
             justify-content: space-between;
 
+            background-color: $white-normal;
+            margin-top: -5px; /*corrigir espaçamento incorreto*/
+            width: 100%;
+            padding: 16px 12px;
+
+            /*Sobreposição*/
+            position: relative;
+            z-index: 2;
+
             div{
                 height: 32px;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
 
-            p{
-                font-weight: bold;
+            strong{
+                font-weight: bolder;
                 font-size: 16px;
             }
 
@@ -161,39 +184,52 @@
                 font-weight: bold;
                 font-size: 14px;
                 background-color: $red-light;
-                padding: 6px 12px;
-                border-radius: 8px;
+                padding: 6px 8px;
+                border-radius: 4px;
             }
         }
     }
 }
 
-.hair-cut:hover{
-    transform: scale(1.05);
+.hair-cut:hover img{
+    transform: scale(1.2);
+    z-index: 0;
 }   
 
-@media screen and (max-width: 920px){
+@media screen and (max-width: 768px){
+
+    .services-content{
+        padding: 42px 42px 64px 42px;
+    }
+
+
     .hair-cut-container{
         flex-wrap: wrap;
     }
 }
 
+/* -------------------MAP-----------------*/
+
 .map{
     background-color: $white-normal;
-
+    margin: -5px 0px; /*corrigir espaçamento indevido*/
     h2{
         text-align: center;
         font-weight: bold;
         font-size: 36px;
         margin-bottom: 32px;
+        text-transform: initial;
     }
     iframe{
         width: 100%;
     }
 }
 
+/* ------------------- footer------------*/
+
 footer{
     background-color: $primary-dark;
+
     .footer-content{
         display: flex;
         flex-direction: column;
@@ -204,14 +240,13 @@ footer{
         color: $white-normal;
         text-align: center;
 
-        .footer-icons a{
-            text-decoration: none;
+        .footer-icons a, .footer-copyright a{
             color: $white-normal;
             margin-right: 8px;
         }
 
-        .footer-copyright a{
-            color: $white-normal;
+        .footer-copyright p{
+            font-size: 12px;
         }
     }
 }
@@ -220,5 +255,46 @@ footer{
     i{
     animation: animation-icons 1s infinite alternate;
     color: $red-dark;
+    }
+}
+
+/* ------------------ WPP button ---------*/
+
+.whatsapp-btn{
+    width: 64px;
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 99; /*Sobrepocisão*/
+    border-radius: 50%;
+    
+    img{
+        transition: transform .25s ease-in-out;
+    }
+
+    .text-btn{
+        position: absolute;
+        top: 10px;
+        right: 76px;
+
+        width: 164px;
+        color: $white-normal;
+        background-color: $black-light;
+        padding: 6px 12px;
+        border-radius: 4px;
+
+        opacity: 0;
+
+        transition: opacity .25s ease-in-out;
+    }
+}
+
+.whatsapp-btn:hover{
+    img{
+    transform: scale(1.1);
+    }
+
+    .text-btn{
+        opacity: 1;
     }
 }
